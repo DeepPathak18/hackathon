@@ -197,18 +197,18 @@ const ResumeBuilder: React.FC = () => {
   const renderSectionContent = (section: Section) => {
     switch (section.type) {
       case 'personal':
-        return (
-          <div className="space-y-4">
-            <input
-              type="text"
-              placeholder="Full Name"
+  return (
+              <div className="space-y-4">
+                    <input
+                      type="text"
+                      placeholder="Full Name"
               value={section.content.fullName || ''}
               onChange={(e) => handleUpdateEntry(section.id, 0, 'fullName', e.target.value)}
               className="w-full p-2 border rounded"
-            />
-            <input
-              type="email"
-              placeholder="Email"
+                    />
+                    <input
+                      type="email"
+                      placeholder="Email"
               value={section.content.email || ''}
               onChange={(e) => handleUpdateEntry(section.id, 0, 'email', e.target.value)}
               className="w-full p-2 border rounded"
@@ -226,14 +226,14 @@ const ResumeBuilder: React.FC = () => {
               value={section.content.location || ''}
               onChange={(e) => handleUpdateEntry(section.id, 0, 'location', e.target.value)}
               className="w-full p-2 border rounded"
-            />
-            <textarea
-              placeholder="Professional Summary"
+                    />
+                    <textarea
+                      placeholder="Professional Summary"
               value={section.content.summary || ''}
               onChange={(e) => handleUpdateEntry(section.id, 0, 'summary', e.target.value)}
               className="w-full p-2 border rounded"
-              rows={4}
-            />
+                      rows={4}
+                    />
           </div>
         );
 
@@ -244,31 +244,31 @@ const ResumeBuilder: React.FC = () => {
               <div key={index} className="border p-4 rounded">
                 <div className="flex justify-between items-center mb-2">
                   <h4 className="font-semibold">Education Entry {index + 1}</h4>
-                  <button
+                      <button 
                     onClick={() => handleDeleteEntry(section.id, index)}
-                    className="text-red-500 hover:text-red-700"
-                  >
+                        className="text-red-500 hover:text-red-700"
+                      >
                     <Trash2 size={16} />
-                  </button>
-                </div>
+                      </button>
+                    </div>
                 <div className="grid grid-cols-2 gap-4">
-                  <input
-                    type="text"
+                    <input
+                      type="text"
                     placeholder="Institution"
                     value={entry.institution}
                     onChange={(e) => handleUpdateEntry(section.id, index, 'institution', e.target.value)}
                     className="p-2 border rounded"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Degree"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Degree"
                     value={entry.degree}
                     onChange={(e) => handleUpdateEntry(section.id, index, 'degree', e.target.value)}
                     className="p-2 border rounded"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Field of Study"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Field of Study"
                     value={entry.field}
                     onChange={(e) => handleUpdateEntry(section.id, index, 'field', e.target.value)}
                     className="p-2 border rounded"
@@ -279,9 +279,9 @@ const ResumeBuilder: React.FC = () => {
                     value={entry.gpa}
                     onChange={(e) => handleUpdateEntry(section.id, index, 'gpa', e.target.value)}
                     className="p-2 border rounded"
-                  />
-                  <input
-                    type="text"
+                    />
+                    <input
+                      type="text"
                     placeholder="Start Date"
                     value={entry.startDate}
                     onChange={(e) => handleUpdateEntry(section.id, index, 'startDate', e.target.value)}
@@ -295,8 +295,8 @@ const ResumeBuilder: React.FC = () => {
                     className="p-2 border rounded"
                   />
                 </div>
-              </div>
-            ))}
+                  </div>
+                ))}
             <button
               onClick={() => handleAddEntry(section.id)}
               className="flex items-center gap-2 text-blue-500 hover:text-blue-700"
@@ -314,30 +314,30 @@ const ResumeBuilder: React.FC = () => {
               <div key={index} className="border p-4 rounded">
                 <div className="flex justify-between items-center mb-2">
                   <h4 className="font-semibold">Experience Entry {index + 1}</h4>
-                  <button
+                      <button 
                     onClick={() => handleDeleteEntry(section.id, index)}
-                    className="text-red-500 hover:text-red-700"
-                  >
+                        className="text-red-500 hover:text-red-700"
+                      >
                     <Trash2 size={16} />
-                  </button>
-                </div>
+                      </button>
+                    </div>
                 <div className="grid grid-cols-2 gap-4">
-                  <input
-                    type="text"
+                    <input
+                      type="text"
                     placeholder="Company"
                     value={entry.company}
                     onChange={(e) => handleUpdateEntry(section.id, index, 'company', e.target.value)}
                     className="p-2 border rounded"
-                  />
-                  <input
-                    type="text"
+                    />
+                    <input
+                      type="text"
                     placeholder="Position"
                     value={entry.position}
                     onChange={(e) => handleUpdateEntry(section.id, index, 'position', e.target.value)}
                     className="p-2 border rounded"
-                  />
-                  <input
-                    type="text"
+                    />
+                    <input
+                      type="text"
                     placeholder="Start Date"
                     value={entry.startDate}
                     onChange={(e) => handleUpdateEntry(section.id, index, 'startDate', e.target.value)}
@@ -349,8 +349,8 @@ const ResumeBuilder: React.FC = () => {
                     value={entry.endDate}
                     onChange={(e) => handleUpdateEntry(section.id, index, 'endDate', e.target.value)}
                     className="p-2 border rounded"
-                  />
-                </div>
+                    />
+                  </div>
                 <div className="mt-4">
                   {entry.description.map((desc, descIndex) => (
                     <div key={descIndex} className="flex gap-2 mb-2">
@@ -365,7 +365,7 @@ const ResumeBuilder: React.FC = () => {
                         }}
                         className="flex-1 p-2 border rounded"
                       />
-                      <button
+                      <button 
                         onClick={() => {
                           const newDescription = entry.description.filter((_, i) => i !== descIndex);
                           handleUpdateEntry(section.id, index, 'description', newDescription);
@@ -410,10 +410,10 @@ const ResumeBuilder: React.FC = () => {
                     className="text-red-500 hover:text-red-700"
                   >
                     <Trash2 size={16} />
-                  </button>
-                </div>
-                <input
-                  type="text"
+                      </button>
+                    </div>
+                    <input
+                      type="text"
                   placeholder="Category (e.g., Technical, Soft Skills)"
                   value={entry.category}
                   onChange={(e) => handleUpdateEntry(section.id, index, 'category', e.target.value)}
@@ -422,8 +422,8 @@ const ResumeBuilder: React.FC = () => {
                 <div className="space-y-2">
                   {entry.items.map((item, itemIndex) => (
                     <div key={itemIndex} className="flex gap-2">
-                      <input
-                        type="text"
+                    <input
+                      type="text"
                         placeholder="Skill"
                         value={item}
                         onChange={(e) => {
@@ -433,7 +433,7 @@ const ResumeBuilder: React.FC = () => {
                         }}
                         className="flex-1 p-2 border rounded"
                       />
-                      <button
+                      <button 
                         onClick={() => {
                           const newItems = entry.items.filter((_, i) => i !== itemIndex);
                           handleUpdateEntry(section.id, index, 'items', newItems);
@@ -481,22 +481,22 @@ const ResumeBuilder: React.FC = () => {
                   </button>
                 </div>
                 <div className="space-y-4">
-                  <input
-                    type="text"
-                    placeholder="Project Name"
+                    <input
+                      type="text"
+                      placeholder="Project Name"
                     value={entry.name}
                     onChange={(e) => handleUpdateEntry(section.id, index, 'name', e.target.value)}
                     className="w-full p-2 border rounded"
-                  />
-                  <textarea
-                    placeholder="Project Description"
+                    />
+                    <textarea
+                      placeholder="Project Description"
                     value={entry.description}
                     onChange={(e) => handleUpdateEntry(section.id, index, 'description', e.target.value)}
                     className="w-full p-2 border rounded"
-                    rows={4}
-                  />
-                  <input
-                    type="text"
+                      rows={4}
+                    />
+                    <input
+                      type="text"
                     placeholder="Project Link"
                     value={entry.link}
                     onChange={(e) => handleUpdateEntry(section.id, index, 'link', e.target.value)}
@@ -538,8 +538,8 @@ const ResumeBuilder: React.FC = () => {
                     </button>
                   </div>
                 </div>
-              </div>
-            ))}
+                  </div>
+                ))}
             <button
               onClick={() => handleAddEntry(section.id)}
               className="flex items-center gap-2 text-blue-500 hover:text-blue-700"
@@ -557,36 +557,36 @@ const ResumeBuilder: React.FC = () => {
               <div key={index} className="border p-4 rounded">
                 <div className="flex justify-between items-center mb-2">
                   <h4 className="font-semibold">Achievement {index + 1}</h4>
-                  <button
+                      <button 
                     onClick={() => handleDeleteEntry(section.id, index)}
-                    className="text-red-500 hover:text-red-700"
-                  >
+                        className="text-red-500 hover:text-red-700"
+                      >
                     <Trash2 size={16} />
-                  </button>
-                </div>
+                      </button>
+                    </div>
                 <div className="space-y-4">
-                  <input
-                    type="text"
-                    placeholder="Achievement Title"
+                    <input
+                      type="text"
+                      placeholder="Achievement Title"
                     value={entry.title}
                     onChange={(e) => handleUpdateEntry(section.id, index, 'title', e.target.value)}
                     className="w-full p-2 border rounded"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Date"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Date"
                     value={entry.date}
                     onChange={(e) => handleUpdateEntry(section.id, index, 'date', e.target.value)}
                     className="w-full p-2 border rounded"
-                  />
-                  <textarea
-                    placeholder="Description"
+                    />
+                    <textarea
+                      placeholder="Description"
                     value={entry.description}
                     onChange={(e) => handleUpdateEntry(section.id, index, 'description', e.target.value)}
                     className="w-full p-2 border rounded"
                     rows={4}
-                  />
-                </div>
+                    />
+                  </div>
               </div>
             ))}
             <button
@@ -595,8 +595,8 @@ const ResumeBuilder: React.FC = () => {
             >
               <Plus size={16} />
               Add Achievement
-            </button>
-          </div>
+                </button>
+              </div>
         );
 
       default:
@@ -732,11 +732,11 @@ const ResumeBuilder: React.FC = () => {
                 ))}
               </div>
             </div>
-          </div>
+        </div>
 
           {/* Main Content */}
           <div className="lg:col-span-3">
-            <div className="bg-white rounded-lg shadow p-6">
+        <div className="bg-white rounded-lg shadow p-6">
               {sections.map(section => (
                 <div
                   key={section.id}
